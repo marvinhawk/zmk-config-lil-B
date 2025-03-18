@@ -11,7 +11,7 @@
 			display-name = "TEST";
 			bindings = <
     &kp R			&kp S			&kp T			&kp H			&kp N			&kp A	    	&kp I			&kp O
-	&kp W	     	&kp C			&kp G			&kp D			&kp L			&kp U   		&kp Y			&kp dot
+	&kp W	     	&kp C			&kp G			&kp D			&kp L			&kp U   		&kp Y			&kp DOT
     	     		     		    &kp SQT    		&kp SPC	    	&kp E			&kp TAB
 			>;
 		};
