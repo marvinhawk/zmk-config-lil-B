@@ -9,7 +9,7 @@
 #define SYM 3
 #define FUN 4
 
-
+/*
 &caps_word {
     continue-list = <UNDERSCORE MINUS BSPC LSHFT RSHFT>;
 };
@@ -209,3 +209,20 @@ combo_##NAME { \
 
     };
 };
+*/
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+			display-name = "TEST";
+			bindings = <
+    &kp R			&kp S			&kp T			&kp H			&kp N			&kp A	    	&kp I			&kp O
+	&kp W	     	&kp C			&kp G			&kp D			&kp L			&kp U   		&kp Y			&kp dot
+    	     		     		    &kp SQT    		&kp SPC	    	&kp E			&kp TAB
+			>;
+		};
+	};
+};
+
