@@ -4,17 +4,16 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-	keymap {
-		compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-		default_layer {
-			display-name = "TEST";
-			bindings = <
-    &kp R			&kp S			&kp T			&kp H			&kp N			&kp A	    	&kp I			&kp O
-	&kp W	     	&kp C			&kp G			&kp D			&kp L			&kp U   		&kp Y			&kp DOT
-    	     		     		    &kp SQT    		&kp SPC	    	&kp E			&kp TAB
-			>;
-		};
-	};
+        default_layer {
+            bindings = <
+                &kp R    &kp S    &kp T    &kp H     &kp N    &kp A       &kp I    &kp O
+                &kp W    &kp C    &kp G    &kp D     &kp L    &kp U       &kp Y    &kp DOT
+                                  &kp SQT  &kp SPACE &kp E    &kp TAB
+            >;
+        };
+    };
 };
 
