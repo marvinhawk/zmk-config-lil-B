@@ -19,11 +19,54 @@
         macro_shiftable_sch: macro_shiftable_sch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                    &macro_tap &kp S
-                    &macro_release &kp RSHIFT
-                    &macro_tap &kp C &kp H
-            >;
+            bindings
+                = <&macro_tap &kp S>
+                , <&macro_release &kp RSHIFT>
+                , <&macro_tap &kp C &kp H>
+                ;
+            tap-ms = <10>;
+        };
+        macro_de_ae: macro_de_ae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp DQT>
+                , <&macro_release &kp RALT>
+                , <&macro_tap &kp A>                   
+                ;
+            tap-ms = <10>;
+        };
+        macro_de_oe: macro_de_oe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp DQT>
+                , <&macro_release &kp RALT>
+                , <&macro_tap &kp O>                   
+                ;
+            tap-ms = <10>;
+        };
+        macro_de_ue: macro_de_ue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp DQT>
+                , <&macro_release &kp RALT>
+                , <&macro_tap &kp U>                   
+                ;
+            tap-ms = <10>;
+        };
+        macro_de_ae: macro_de_ae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp RALT>
+                ;
             tap-ms = <10>;
         };
     };
@@ -135,6 +178,11 @@ combo_##NAME { \
         COMBO(colon, &kp COLON, 14 18)
         COMBO(minus, &kp MINUS, 1 10)
         COMBO(slash, &kp SLASH, 6 13)
+/* umlauts */
+        COMBO(ae, &macro_de_ae, 5 18)
+        COMBO(oe, &macro_de_oe, 7 18)
+        COMBO(ue, &macro_de_ue, 13 18)
+        COMBO(sz, &macro_de_sz, 1 17)
 /* parentheticals */
         COMBO(lbrc, &kp LBRC, 1 9)
         COMBO(lbkt, &kp LBKT, 2 10)
