@@ -59,7 +59,7 @@
                 ;
             tap-ms = <10>;
         };
-        macro_de_ae: macro_de_ae {
+        macro_de_sz: macro_de_sz {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
