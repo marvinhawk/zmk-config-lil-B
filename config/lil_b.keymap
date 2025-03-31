@@ -124,18 +124,35 @@ combo_##NAME { \
     timeout-ms = <20>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
+    layers = <0>;
 };
 #define SLOWCOMBO(NAME, BINDINGS, KEYPOS) \
 combo_##NAME { \
     timeout-ms = <40>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
+    layers = <0>;
 };
 #define TCOMBO(NAME, BINDINGS, KEYPOS, TIMEOUT) \
 combo_##NAME { \
     timeout-ms = <TIMEOUT>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
+    layers = <0>;
+};
+#define ALL_COMBO(NAME, BINDINGS, KEYPOS) \
+combo_##NAME { \
+    timeout-ms = <20>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <-1>;
+};
+#define LAYER_COMBO(NAME, BINDINGS, KEYPOS, LAYER) \
+combo_##NAME { \
+    timeout-ms = <20>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYER>;
 };
 
 #define COMBOS_TOP_ROW(LTPR, LTRM, LTMI, RTIM, RTMR, RTRP) \
@@ -172,12 +189,23 @@ combo_##NAME { \
         COMBO(k, &kp K, 2 11)
         COMBO(j, &kp J, 5 12)
         COMBO(shiftablesch, &macro_shiftable_sch, 1 3)
-        COMBO(enter, &kp ENTER, 12 14)
-        COMBO(esc, &kp ESC, 0 3)
-        COMBO(semi, &kp SEMICOLON, 13 19)
-        COMBO(colon, &kp COLON, 14 18)
-        COMBO(minus, &kp MINUS, 1 10)
-        COMBO(slash, &kp SLASH, 6 13)
+        ALL_COMBO(enter, &kp ENTER, 12 14)
+        ALL_COMBO(esc, &kp ESC, 0 3)
+        ALL_COMBO(semi, &kp SEMICOLON, 13 19)
+        ALL_COMBO(colon, &kp COLON, 14 18)
+        ALL_COMBO(minus, &kp MINUS, 1 10)
+        ALL_COMBO(slash, &kp SLASH, 6 13)
+/* numbers */
+        LAYER_COMBO(L0, &kp N0, 1 2, 1)
+        LAYER_COMBO(L9, &kp N9, 9 10, 1)
+        LAYER_COMBO(L8, &kp N8, 2 3, 1)
+        LAYER_COMBO(L7, &kp N7, 10 11, 1)
+        LAYER_COMBO(R7, &kp N7, 12 13, 1)
+        LAYER_COMBO(R8, &kp N8, 4 5, 1)
+        LAYER_COMBO(R9, &kp N9, 13 14, 1)
+        LAYER_COMBO(R0, &kp N0, 5 6, 1)
+        LAYER_COMBO(Lplus, &kp PLUS, 2 11, 1)
+        LAYER_COMBO(Rplus, &kp PLUS, 5 12, 1)
 /* umlauts */
         COMBO(ae, &macro_de_ae, 5 18)
         COMBO(oe, &macro_de_oe, 7 18)
@@ -196,7 +224,7 @@ combo_##NAME { \
         COMBO(caps, &caps_word, 3 4)
         COMBO(capslock, &kp CAPSLOCK, 1 6)
 /* deletion */
-        COMBO(bspc, &kp BSPC, 4 6)
+        ALL_COMBO(bspc, &kp BSPC, 4 6)
         SLOWCOMBO(del, &kp DEL, 5 7)
         COMBO(delword, &kp LC(BSPC), 4 7)
     };
@@ -223,8 +251,8 @@ combo_##NAME { \
         };
         numbers {
             bindings = <
-                &hl LCTRL PLUS &hl LALT MINUS &hl LGUI STAR  &hl LSHFT SLASH    &kp N4         &kp N5         &kp N6         &dotcol
-                &none          &kp N9         &kp N8         &kp N7             &kp N1         &kp N2         &kp N3         &none
+                &dotcol        &kp N6         &kp N5         &kp N4             &kp N4         &kp N5         &kp N6         &dotcol
+                &none          &kp N3         &kp N2         &kp N1             &kp N1         &kp N2         &kp N3         &none
                                               &trans         &trans             &kp E          &kp N0
             >;
         };
@@ -238,7 +266,7 @@ combo_##NAME { \
         symbols {
             bindings = <
                 &kp EXCL       &kp AT         &kp HASH       &kp DOLLAR         &kp AMPERSAND  &kp ASTERISK   &kp PERCENT    &kp CARET
-                &none          &kp GRAVE      &kp DQT        &kp UNDERSCORE     &kp BACKSLASH  &kp PIPE       &kp EQUAL      &none
+                &none          &kp GRAVE      &kp DQT        &kp PLUS           &kp BACKSLASH  &kp PIPE       &kp EQUAL      &none
                                               &kp TILDE      &trans             &trans         &trans
             >;
         };
