@@ -145,14 +145,13 @@ combo_##NAME { \
     timeout-ms = <20>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <-1>; \
 };
-#define LAYER_COMBO(NAME, BINDINGS, KEYPOS, LAYER) \
+#define LAYER_COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
 combo_##NAME { \
     timeout-ms = <20>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <LAYER>; \
+    layers = <LAYERS>; \
 };
 
 #define COMBOS_TOP_ROW(LTPR, LTRM, LTMI, RTIM, RTMR, RTRP) \
