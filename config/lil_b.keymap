@@ -124,35 +124,35 @@ combo_##NAME { \
     timeout-ms = <20>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <0>;
+    layers = <0>; \
 };
 #define SLOWCOMBO(NAME, BINDINGS, KEYPOS) \
 combo_##NAME { \
     timeout-ms = <40>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <0>;
+    layers = <0>; \
 };
 #define TCOMBO(NAME, BINDINGS, KEYPOS, TIMEOUT) \
 combo_##NAME { \
     timeout-ms = <TIMEOUT>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <0>;
+    layers = <0>; \
 };
 #define ALL_COMBO(NAME, BINDINGS, KEYPOS) \
 combo_##NAME { \
     timeout-ms = <20>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <-1>;
+    layers = <-1>; \
 };
 #define LAYER_COMBO(NAME, BINDINGS, KEYPOS, LAYER) \
 combo_##NAME { \
     timeout-ms = <20>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <LAYER>;
+    layers = <LAYER>; \
 };
 
 #define COMBOS_TOP_ROW(LTPR, LTRM, LTMI, RTIM, RTMR, RTRP) \
