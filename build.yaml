@@ -1,4 +1,6 @@
 include:
   - board: lil_b
+  - board: lil_b
+    shield: settings_reset
     # snippet: studio-rpc-usb-uart
     # cmake-args: -DCONFIG_ZMK_STUDIO=y
