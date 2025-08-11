@@ -22,3 +22,9 @@ On macOs you might get an error stating that the `operation can’t be completed
 
 - move the `.uf2` to your root directory
 - copy the file onto the volume: `cp -X lil-b.uf2 ../../Volumes/<volume_name>/`
+
+
+---
+
+Adding changes to run build action..
+
